@@ -61,7 +61,6 @@ function App() {
                 </PrivateRoute>
               }
             />
-            <Route path="/messenger" element={<Messenger/>} />
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/profile" element={<Profile />} />
             <Route exact path="/signup" element={<SignUp />} />

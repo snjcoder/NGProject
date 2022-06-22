@@ -3,6 +3,7 @@ import { Box, Container, List, ListItemButton, ListItemIcon, ListItemText, Card 
 import RssFeedIcon from "@mui/icons-material/RssFeed";
 import ChatIcon from "@mui/icons-material/Chat";
 import InventoryIcon from "@mui/icons-material/Inventory";
+import Messenger from "../messenger/Messenger";
 
 const LeftBar = () => {  
   return (
@@ -81,6 +82,13 @@ const LeftBar = () => {
               </ListItemIcon>
               <ListItemText primary="Inbox" />
             </ListItemButton>
+            <ListItemButton>
+              <ListItemIcon>
+                <ChatIcon/>
+              </ListItemIcon>
+              <ListItemText primary="Chat"/>
+            </ListItemButton>
+            
           </List>
         </Card>
       </Box>
