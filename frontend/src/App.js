@@ -27,23 +27,11 @@ import Test from "./Components/WantList/Test";
 import { Watchlist, Wishlist } from "./Components/WantList/Wishlist";
 import { Watched, Exchanged } from "./Components/WantList/Wished";
 import { Add } from "./Components/WantList/Add";
-import { io } from "socket.io-client";
+import Messenger from "./Components/messenger/Messenger";
+
 
 function App() {
-  const [username, setUsername] = useState("");
-  const [user, setUser] = useState("");
-  const [socket, setSocket] = useState(null)
-
-  useEffect(() =>{
-    const socket = io("http://localhost:5000");
-  },[])
-
-  useEffect(() =>{
-    socket.emit("newUser", user);
-  },[socket, user])
-
-
-
+  
   return (
     <>
       <FirebaseProvider>
@@ -73,6 +61,7 @@ function App() {
                 </PrivateRoute>
               }
             />
+            <Route path="/messenger" element={<Messenger/>} />
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/profile" element={<Profile />} />
             <Route exact path="/signup" element={<SignUp />} />

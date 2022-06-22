@@ -25,6 +25,7 @@ const RightBar = () => {
         </Typography>
        <Location />
      </Container>
+       
     </Box>
   )
 }

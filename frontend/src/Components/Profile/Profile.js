@@ -5,6 +5,7 @@ import LeftBar from "./LeftBar"
 import MiddleBar from "./MiddleBar"
 import RightBar from "./RightBar"
 
+
 const Profile = () => {
     const authContext = useContext(AuthContext)
     const { user } = authContext;
