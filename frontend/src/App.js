@@ -27,7 +27,7 @@ import Test from "./Components/WantList/Test";
 import { Watchlist, Wishlist } from "./Components/WantList/Wishlist";
 import { Watched, Exchanged } from "./Components/WantList/Wished";
 import { Add } from "./Components/WantList/Add";
-import Messenger from "./Components/messenger/Messenger";
+import Messenger from "./Components/chat/messenger/Messenger";
 
 
 function App() {

@@ -2,7 +2,7 @@ import "./topbar.css";
 import { Search, Person, Chat, Notifications } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
-import { AuthContext  } from '../../auth/AuthProvider'
+import { AuthContext } from "../../../auth/AuthProvider"
 
 export default function Topbar() {
   const { user } = useContext(AuthContext);
@@ -11,7 +11,7 @@ export default function Topbar() {
     <div className="topbarContainer">
       <div className="topbarLeft">
         <Link to="/" style={{ textDecoration: "none" }}>
-          <span className="logo">Lamasocial</span>
+          <span className="logo">HUNDIE</span>
         </Link>
       </div>
       <div className="topbarCenter">
@@ -24,10 +24,7 @@ export default function Topbar() {
         </div>
       </div>
       <div className="topbarRight">
-        <div className="topbarLinks">
-          <span className="topbarLink">Homepage</span>
-          <span className="topbarLink">Timeline</span>
-        </div>
+       
         <div className="topbarIcons">
           <div className="topbarIconItem">
             <Person />

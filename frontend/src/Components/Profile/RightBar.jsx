@@ -1,8 +1,10 @@
 import React, { useContext } from 'react'
-import { Box, Container, Typography, Avatar } from '@mui/material';
+import { Box, Container, Typography, Avatar,ListItemIcon, ListItemText, ListItemButton } from '@mui/material';
 import { AuthContext  } from '../../auth/AuthProvider'
 import { useNavigate } from 'react-router-dom';
 import Location from '../Region/Location';
+import ChatIcon from "@mui/icons-material/Chat";
+import Messenger from '../chat/messenger/Messenger';
 
 const RightBar = () => {
 
@@ -24,6 +26,24 @@ const RightBar = () => {
         email: {user.email}
         </Typography>
        <Location />
+       <br/>
+       <br/>
+       <br/>
+       <br/>
+       <br/>
+       <br/>
+       <br/>
+       <br/>
+       <br/>
+       <br/>
+       <Messenger/>
+       {/* <ListItemButton>
+              <ListItemIcon>
+                <ChatIcon/>
+              </ListItemIcon>
+              <ListItemText primary="Chat" />
+            </ListItemButton> */}
+            
      </Container>
        
     </Box>
