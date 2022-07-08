@@ -5,6 +5,8 @@ import { useNavigate } from 'react-router-dom';
 import Location from '../Region/Location';
 import ChatIcon from "@mui/icons-material/Chat";
 import Messenger from '../chat/messenger/Messenger';
+import ChatProfile from '../chat/chatprofile/ChatProfile'
+
 
 const RightBar = () => {
 
@@ -36,7 +38,9 @@ const RightBar = () => {
        <br/>
        <br/>
        <br/>
-       <Messenger/>
+       <ChatProfile />
+       {/* <Messenger/> */}
+       
        {/* <ListItemButton>
               <ListItemIcon>
                 <ChatIcon/>

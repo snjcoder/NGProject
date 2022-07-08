@@ -13,6 +13,7 @@ import SwipCards from "./SwipCards";
 import WishList from "./WishList";
 import Market from "./Market";
 import Settings from "./Settings";
+import Messenger from "../chat/messenger/Messenger";
 
 
 const MiddleBar = () => {
@@ -100,6 +101,7 @@ const MiddleBar = () => {
         {/* <Feeds /> */}
 
       </Container>
+      <Messenger />
     </Box>
   );
 };
