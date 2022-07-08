@@ -3,7 +3,7 @@ import { Box, Container, List, ListItemButton, ListItemIcon, ListItemText, Card 
 import RssFeedIcon from "@mui/icons-material/RssFeed";
 import ChatIcon from "@mui/icons-material/Chat";
 import InventoryIcon from "@mui/icons-material/Inventory";
-import Messenger from "../chat/messenger/Messenger";
+
 
 const LeftBar = () => {  
   return (

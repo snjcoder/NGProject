@@ -2,27 +2,24 @@ import React, { useState } from "react";
 import { Box, Container, Button } from "@mui/material";
 // import Feeds from '../Feeds';
 import TopProfile from "./TopProfile";
-import Feeds from '../Feeds';
+import Feeds from "../Feeds";
 import DropSelections from "../DropSelections";
-import Wish from "./WishList"
+import Wish from "./WishList";
 import Test from "../WantList/Test";
 
-import ProductScreen from '../ProductPage/Product';
+import ProductScreen from "../ProductPage/Product";
 
 import SwipCards from "./SwipCards";
 import WishList from "./WishList";
 import Market from "./Market";
 import Settings from "./Settings";
-import Messenger from "../chat/messenger/Messenger";
-
 
 const MiddleBar = () => {
-
   const [active, setActive] = useState("topProfile");
   const [modalVisible, setModalVisible] = useState(false);
 
   const [open, setOpen] = useState(false);
-  
+
   const handleModalOpen = () => {
     setModalVisible(true);
   };
@@ -82,12 +79,27 @@ const MiddleBar = () => {
           >
             Want List
           </Button>
-          <Button onClick={handleModalOpen} sx={{ margin: "5px" }} variant="outlined" size="large">Post Ad</Button>
-        {modalVisible && ( <DropSelections visible={modalVisible} onCancel={handleCancel} sx={{ margin: "5px" }}variant="outlined" size="large" />)}
+          <Button
+            onClick={handleModalOpen}
+            sx={{ margin: "5px" }}
+            variant="outlined"
+            size="large"
+          >
+            Post Ad
+          </Button>
+          {modalVisible && (
+            <DropSelections
+              visible={modalVisible}
+              onCancel={handleCancel}
+              sx={{ margin: "5px" }}
+              variant="outlined"
+              size="large"
+            />
+          )}
         </Box>
         <hr />
 
-        <TopProfile /> 
+        <TopProfile />
         <Feeds />
 
         <>
@@ -99,9 +111,7 @@ const MiddleBar = () => {
           {active === "settings" && <Settings />}
         </>
         {/* <Feeds /> */}
-
       </Container>
-      <Messenger />
     </Box>
   );
 };
