@@ -27,16 +27,14 @@ import Test from "./Components/WantList/Test";
 import { Watchlist, Wishlist } from "./Components/WantList/Wishlist";
 import { Watched, Exchanged } from "./Components/WantList/Wished";
 import { Add } from "./Components/WantList/Add";
-
-
+import NavBar from "./Components/NavBar";
 
 function App() {
-  
   return (
     <>
       <FirebaseProvider>
         <AuthProvider>
-          <Navigation />
+          <NavBar />
           <Routes>
             <Route path="/" element={<Home />} />
             {/* <Route path="/products" element={<ProductPage />} /> */}
