@@ -166,7 +166,7 @@ const Styles = {
   Wrapper: styled.main`
     display: flex;
     background-color: #eeeeee;
-    height: 100vh;
+    
   `,
 };
 
