@@ -1,18 +1,15 @@
 import React, { useContext, useState } from "react";
-import {
-  Box,
-  makeStyles,
-  Avatar,
-  TextField,
-  Container,
-  Paper,
-} from "@material-ui/core";
+import { Box, makeStyles, Avatar, TextField, Paper } from "@material-ui/core";
 import { Link, useNavigate } from "react-router-dom";
 import { Typography, Button } from "@mui/material";
 import { AuthContext } from "../../auth/AuthProvider";
 import background from "../../images/loginImage.png";
 
 const useStyles = makeStyles((theme) => ({
+  input: {
+    color: "#ff9800",
+  },
+
   root: {
     display: "flex",
     flexDirection: "column",
@@ -56,12 +53,27 @@ const SignUp = () => {
     }
   };
 
+  // type props = {
+  //   fontColor?: "string",
+  // };
+  // const options = {
+  //   shouldForwardProp: (prop) => prop !== "fontColor",
+  // };
+  // const StyledTextField =
+  //   styled(TextField, options) <
+  //   props >
+  //   (({ fontColor }) => ({
+  //     input: {
+  //       color: fontColor,
+  //     },
+  //   }));
+
   // const back = {
   //   backgroundImage: "linear-gradient(60deg, #abecd6 0%, #fbed96 100%)",
   // };
 
   return (
-    <Container
+    <form
       className={classes.root}
       onSubmit={handleSubmit}
       style={{
@@ -74,17 +86,6 @@ const SignUp = () => {
         width: "100vw",
       }}
     >
-      {/* <img
-        src={background}
-        style={{
-          backgroundSize: "cover",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          height: "100vh",
-          width: "100vw",
-        }}
-      /> */}
       <Paper
         elevation={10}
         style={{
@@ -110,45 +111,56 @@ const SignUp = () => {
           Sign Up
         </Typography>
         <Avatar style={avatarStyle}></Avatar>
-        <TextField
-          label="First Name"
-          variant="filled"
-          required
-          value={firstName}
-          onChange={(e) => setFirstName(e.target.value)}
-        />
-        <TextField
-          label="Last Name"
-          variant="filled"
-          required
-          value={lastName}
-          onChange={(e) => setLastName(e.target.value)}
-        />
+        <Box
+          sx={{
+            "& > :not(style)": { m: 1, width: "25ch" },
+          }}
+        >
+          <TextField
+            inputProps={{ className: classes.input }}
+            label="First Name"
+            variant="outlined"
+            required
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
+          />
+          <TextField
+            inputProps={{ className: classes.input }}
+            label="Last Name"
+            variant="filled"
+            required
+            value={lastName}
+            onChange={(e) => setLastName(e.target.value)}
+          />
 
-        <TextField
-          label="Email"
-          variant="filled"
-          type="email"
-          required
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <TextField
-          label="Password"
-          variant="filled"
-          type="password"
-          required
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <TextField
-          label="Postal Code"
-          variant="filled"
-          type="postalCode"
-          required
-          value={postalCode}
-          onChange={(e) => setPostalCode(e.target.value)}
-        />
+          <TextField
+            inputProps={{ className: classes.input }}
+            label="Email"
+            variant="filled"
+            type="email"
+            required
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <TextField
+            inputProps={{ className: classes.input }}
+            label="Password"
+            variant="filled"
+            type="password"
+            required
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <TextField
+            inputProps={{ className: classes.input }}
+            label="Postal Code"
+            variant="filled"
+            type="postalCode"
+            required
+            value={postalCode}
+            onChange={(e) => setPostalCode(e.target.value)}
+          />
+        </Box>
         <Typography sx={{ color: "green", marginLeft: "3vw" }}>
           <br />
           <input type="checkbox" id="regulation"></input>
@@ -178,7 +190,7 @@ const SignUp = () => {
           © 2022, HundieTrade.com, Inc.
         </span>
       </Typography>
-    </Container>
+    </form>
   );
 };
 
