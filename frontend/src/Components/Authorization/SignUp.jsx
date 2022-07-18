@@ -187,9 +187,9 @@ const SignUp = () => {
         </Link>
       </Typography>
       <Typography variant="h5">
-        <span class="a-size-mini a-color-secondary">
+        <section class="a-size-mini a-color-secondary">
           © 2022, HundieTrade.com, Inc.
-        </span>
+        </section>
       </Typography>
     </form>
   );

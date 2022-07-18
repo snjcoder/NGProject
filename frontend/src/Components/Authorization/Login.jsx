@@ -7,7 +7,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import GoogleIcon from "@mui/icons-material/Google";
-
+import bg1 from "../../images/bg1.jpeg";
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
@@ -100,95 +100,105 @@ const Login = () => {
   };
 
   return (
-    <div className={classes.root} style={{ backgroundColor: "#fafafa" }}>
-      <form className={classes.root} onSubmit={handleSubmit}>
-        <Typography variant="h4">User Login</Typography> <br />
-        <Avatar style={avatarStyle}></Avatar>
-        <TextField
-          label="Email"
-          variant="filled"
-          type="email"
-          required
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <br />
-        <TextField
-          label="Password"
-          variant="filled"
-          type="password"
-          required
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        {authError && (
-          <Typography variant="h6" style={{ color: "red" }}>
-            {authError}
-          </Typography>
+    <form
+      className={classes.root}
+      onSubmit={handleSubmit}
+      style={{
+        backgroundImage: `url(${bg1})`,
+        backgroundSize: "cover",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "100vh",
+        width: "100vw",
+      }}
+    >
+      <Typography variant="h4">User Login</Typography> <br />
+      <Avatar style={avatarStyle}></Avatar>
+      <TextField
+        label="Email"
+        variant="filled"
+        type="email"
+        required
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
+      <br />
+      <TextField
+        label="Password"
+        variant="filled"
+        type="password"
+        required
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+      />
+      {authError && (
+        <Typography variant="h6" style={{ color: "red" }}>
+          {authError}
+        </Typography>
+      )}
+      <Box>
+        <Button variant="contained">Cancel</Button>
+        {loading && (
+          <Button type="submit" variant="contained" color="primary">
+            Login
+          </Button>
         )}
-        <Box>
-          <Button variant="contained">Cancel</Button>
-          {loading && (
-            <Button type="submit" variant="contained" color="primary">
-              Login
-            </Button>
-          )}
-          {!loading && (
-            <Button type="submit" variant="contained" color="primary">
-              Login...
-            </Button>
-          )}
-        </Box>
-        <Box sx={{ display: "flex", flexDirection: "column" }}>
-          <Typography
-            variant="h5"
-            onClick={() => forgotPassword()}
-            sx={{ paddingLeft: "7rem", color: "green" }}
-          >
-            Forget Password
-          </Typography>{" "}
-          <hr />
-          <Typography variant="h6" sx={{ paddingLeft: "8rem", color: "blue" }}>
-            Or Login in with
-          </Typography>
-          <Button
-            onClick={githubLogin}
-            variant="contained"
-            sx={{
-              backgroundColor: " #171515",
-              display: "flex",
-              width: "20rem",
-            }}
-          >
-            <GitHubIcon sx={{ margin: "5px" }} />
-            Github
+        {!loading && (
+          <Button type="submit" variant="contained" color="primary">
+            Login...
           </Button>
-          <Button
-            onClick={facebookLogin}
-            variant="contained"
-            sx={{ display: "flex", width: "20rem" }}
-          >
-            <FacebookIcon sx={{ margin: "5px" }} />
-            Facebook
-          </Button>
-          <Button
-            onClick={googleLogin}
-            variant="contained"
-            sx={{ display: "flex", width: "20rem", backgroundColor: "green" }}
-          >
-            <GoogleIcon sx={{ margin: "5px", color: "red" }} />
-            Google
-          </Button>
-          <Button
-            onClick={twitterLogin}
-            variant="contained"
-            sx={{ display: "flex", width: "20rem" }}
-          >
-            <TwitterIcon sx={{ margin: "5px" }} />
-            Twitter
-          </Button>
-        </Box>
-      </form>
+        )}
+      </Box>
+      <Box sx={{ display: "flex", flexDirection: "column" }}>
+        <Typography
+          variant="h5"
+          onClick={() => forgotPassword()}
+          sx={{ paddingLeft: "7rem", color: "green" }}
+        >
+          Forget Password
+        </Typography>{" "}
+        <hr />
+        <Typography variant="h6" sx={{ paddingLeft: "8rem", color: "blue" }}>
+          Or Login in with
+        </Typography>
+        <Button
+          onClick={githubLogin}
+          variant="contained"
+          sx={{
+            backgroundColor: " #171515",
+            display: "flex",
+            width: "20rem",
+          }}
+        >
+          <GitHubIcon sx={{ margin: "5px" }} />
+          Github
+        </Button>
+        <Button
+          onClick={facebookLogin}
+          variant="contained"
+          sx={{ display: "flex", width: "20rem" }}
+        >
+          <FacebookIcon sx={{ margin: "5px" }} />
+          Facebook
+        </Button>
+        <Button
+          onClick={googleLogin}
+          variant="contained"
+          sx={{ display: "flex", width: "20rem", backgroundColor: "green" }}
+        >
+          <GoogleIcon sx={{ margin: "5px", color: "red" }} />
+          Google
+        </Button>
+        <Button
+          onClick={twitterLogin}
+          variant="contained"
+          sx={{ display: "flex", width: "20rem" }}
+        >
+          <TwitterIcon sx={{ margin: "5px" }} />
+          Twitter
+        </Button>
+      </Box>
       <Typography variant="h5">New to HundieTrade?</Typography>
       <Box>
         <Link to="/signup" style={{ textDecoration: "none", fontSize: "16px" }}>
@@ -201,7 +211,7 @@ const Login = () => {
           © 2022, HundieTrade.com, Inc. or its affiliates
         </Typography>
       </Box>
-    </div>
+    </form>
   );
 };
 
