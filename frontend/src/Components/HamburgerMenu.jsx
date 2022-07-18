@@ -1,4 +1,4 @@
-import { Button } from "@mui/material";
+import { Button, useMediaQuery, useTheme, typo } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
 import { Link } from "react-router-dom";
@@ -6,6 +6,10 @@ import LoginIcon from "@mui/icons-material/Login";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 
 const HamburgerMenu = ({ user, menuOpen, openHamburger, logoutUser }) => {
+  const theme = useTheme();
+  console.log(theme);
+  const isMatch = useMediaQuery(theme.breakpoints.down("md"));
+  console.log(isMatch);
   return (
     <Box
       style={{
@@ -25,6 +29,15 @@ const HamburgerMenu = ({ user, menuOpen, openHamburger, logoutUser }) => {
           zIndex: "200",
         }}
       >
+        {/* {
+            isMatch (
+              <>
+              <TypoGraphy>
+
+              </TypoGraphy>
+              </>
+            ):()
+          } */}
         <Link style={{ textDecoration: "none" }} to="/" onClick={openHamburger}>
           <Button sx={{ my: 2, color: "white", display: "block" }}>Home</Button>
         </Link>

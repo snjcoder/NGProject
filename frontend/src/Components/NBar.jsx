@@ -1,7 +1,13 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Box from "@mui/material/Box";
-import { Toolbar, Typography, Container, Button, Grid } from "@mui/material";
+import {
+  Toolbar,
+  Typography,
+  Container,
+  Button,
+  
+} from "@mui/material";
 import LoginIcon from "@mui/icons-material/Login";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import Avatar from "@mui/material/Avatar";
@@ -29,6 +35,7 @@ const NavBar = (props) => {
   const [usePicture, setUserPicture] = useState();
   const [displayName, setDisplayName] = useState("");
   const [menuOpen, setMenuOpen] = useState("false");
+ 
   function openHamburger() {
     setMenuOpen((curr) => !curr);
   }
@@ -52,6 +59,7 @@ const NavBar = (props) => {
     await LogoutUser();
     navigate("/login");
   };
+
   // const NavMenu = styled.div`
   //   display: flex;
   //   align-items: center;
@@ -100,6 +108,7 @@ const NavBar = (props) => {
             openHamburger={openHamburger}
             logoutUser={logoutUser}
           />
+         
 
           <Box sx={{ display: { xs: "none", md: "flex" }, marginLeft: "auto" }}>
             {!user && (
