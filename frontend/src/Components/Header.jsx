@@ -7,11 +7,12 @@ const Header = () => {
       <AppBar sx={{ background: "#063970" }}>
         <Toolbar>
           <Tabs  textColor="inhert">
-            <Tabs label="Products" />
-            <Tabs label="Products" />
-            <Tabs label="Products" />
-            <Tabs label="Products" />
+            <Tabs label="Home" />
+            <Tabs label="Map" />
+            <Tabs label="About" />
+            <Tabs label="Store" />
           </Tabs>
+          
         </Toolbar>
       </AppBar>
     </React.Fragment>
